@@ -1,0 +1,22 @@
+name: My First CI Workflow
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  hello:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Show a greeting
+        run: echo "Hello from GitHub Actions!"
+
+      - name: Show the current directory
+        run: pwd
+
+      - name: Show GitHub event
+        run: echo "Event: $GITHUB_EVENT_NAME"
